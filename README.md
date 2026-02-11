@@ -55,18 +55,23 @@ NET_WRITE_TIMEOUT=3600
 
 ## How to Run
 
-1. **System Core**: `python3 db_migration/migrate_core.py`
-2. **IAM App Data**: `python3 db_migration/migrate_iam.py`
-3. **Spine Data**: `python3 db_migration/migrate_spine.py`
+The migration is organized into three distinct modules. You can run them using the `run.py` script within each folder.
+
+1. **System Core**: `python3 db_migration/core/run.py`
+2. **IAM App Data**: `python3 db_migration/iam/run.py`
+3. **Spine Data**: `python3 db_migration/spine/run.py`
 
 ## Monitoring & State
 
-- **Console**: Real-time progress with formatted table spacing for easy reading.
+- **Console**: Real-time progress formatted for easy reading.
 - **File**: Detailed records are saved to `db_migration/migration.log`.
 - **State**: Progress is tracked per-table in `db_migration/migration_state.json`.
+- **Disabling Tables**: You can skip specific tables by adding them to `DISABLED_TABLES` in `db_migration/configs/migration_settings.py`.
 
-## Troubleshooting
+## Structure
 
-- **Packet Error**: If you see "Got a packet bigger than 'max_allowed_packet'", decrease the `batch_size` in the specific table configuration (e.g., `iam_tables.py`).
-- **Lost Connection**: The script retries automatically. If persistent, increase `NET_READ_TIMEOUT` in `.env`.
-- **Resetting Progress**: Delete the table's entry in `migration_state.json` to restart it.
+- `/core`: Scripts for roles, users, and auth.
+- `/iam`: Scripts for IAM masters and audit logs.
+- `/spine`: Scripts for document mapping and spine logs.
+- `/common`: Database connection pooling and the batch migrator engine.
+- `/configs`: Table schemas and the global `migration_settings.py`.

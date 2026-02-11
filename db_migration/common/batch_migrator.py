@@ -5,6 +5,7 @@ import functools
 from typing import List, Optional
 from common.db import SRC_POOL, TGT_POOL
 from common.logger import get_logger
+from configs.migration_settings import DISABLED_TABLES
 from mysql.connector import Error, OperationalError
 
 logger = get_logger("BatchMigrator")
@@ -93,6 +94,11 @@ def migrate_table(
 ):
     # Use table_name as default for target if not provided
     tgt_table = target_table_name or table_name
+
+    # CHECK IF TABLE IS DISABLED
+    if table_name in DISABLED_TABLES:
+        logger.info(f"Table {table_name} is disabled in settings. Skipping.")
+        return
 
     # Try to load previous state
     last_migrated_id = load_state(table_name)

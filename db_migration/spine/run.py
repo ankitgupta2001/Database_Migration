@@ -1,3 +1,9 @@
+import os
+import sys
+
+# Add the parent directory (db_migration root) to sys.path
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
 from common.batch_migrator import migrate_table, execute_session_setup, execute_session_teardown
 from configs.spine_tables import SPINE_TABLES
 from common.logger import get_logger
