@@ -11,6 +11,16 @@ A robust, resumable Python-based mini-ETL designed to handle large-scale MariaDB
 - **Table-Specific Tuning**: Supports custom `batch_size`, `order_by`, and `where` filters per table.
 - **Improved Logging**: Clean, readable console progress updates and dedicated `migration.log` for auditing.
 
+## Production Safety & Data Integrity
+
+This tool is designed with a "Safety First" philosophy for production environments:
+
+- **Source Zero-Touch**: The script only performs `SELECT` queries on the source database. It **never** executes `INSERT`, `UPDATE`, or `DELETE` on your source data.
+- **Idempotency**: Uses `INSERT IGNORE`. If you run the script multiple times, it will skip rows that already exist on the target rather than duplicating or overwriting them.
+- **Static Resumability**: Because you are taking downtime, the state tracking (`migration_state.json`) is 100% accurate. If a network interruption occurs, the script resumes exactly at the last record without gaps.
+- **Memory Safety**: Keyset pagination ensures the script never tries to load a whole table into RAM, preventing OOM crashes that could hang a server.
+- **Index Guardrails**: The index replicator only creates indexes if they don't exist and only if all involved columns were migrated.
+
 ## Installation
 
 1. **Clone the Repository**:
@@ -63,6 +73,14 @@ The migration is organized into three distinct modules. You can run them using t
 1. **System Core**: `python3 db_migration/core/run.py`
 2. **IAM App Data**: `python3 db_migration/iam/run.py`
 3. **Spine Data**: `python3 db_migration/spine/run.py`
+
+### Index Replication
+
+After migrating data, you should replicate the performance indexes to the target database:
+
+```bash
+python3 db_migration/replicate_indexes.py
+```
 
 ## Monitoring & State
 
