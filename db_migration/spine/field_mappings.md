@@ -1,8 +1,8 @@
 # Spine Module Field Mappings
 
-This document lists all tables and fields migrated in the Spine module.
+This document lists all 13 DocTypes migrated in the Spine module.
 
-## [tabDocument Map]
+## 1. [tabDocument Map]
 - `name`
 - `creation`
 - `modified`
@@ -16,7 +16,7 @@ This document lists all tables and fields migrated in the Spine module.
 - `local_name`
 - `remote_host`
 
-## [tabData Sync Configuration]
+## 2. [tabData Sync Configuration]
 - `name`
 - `creation`
 - `modified`
@@ -41,7 +41,7 @@ This document lists all tables and fields migrated in the Spine module.
 - `filter_string`
 - `post_process_script`
 
-## [tabData Sync Link Conversion]
+## 3. [tabData Sync Link Conversion]
 - `name`
 - `creation`
 - `modified`
@@ -55,7 +55,7 @@ This document lists all tables and fields migrated in the Spine module.
 - `remote_doctype`
 - `local_doctype`
 
-## [tabData Sync Value Map]
+## 4. [tabData Sync Value Map]
 - `name`
 - `creation`
 - `modified`
@@ -75,9 +75,9 @@ This document lists all tables and fields migrated in the Spine module.
 - `force_convert`
 - `evaluate_jinja`
 
-## [tabData Sync Field]
+## 5. [tabData Sync Field]
 - `name`
-- `creation`
+- `creation"
 - `modified`
 - `modified_by`
 - `owner`
@@ -89,9 +89,9 @@ This document lists all tables and fields migrated in the Spine module.
 - `local_field`
 - `field_data_type`
 
-## [tabField Map]
+## 6. [tabField Map]
 - `name`
-- `creation`
+- `creation"
 - `modified`
 - `modified_by`
 - `owner`
@@ -103,9 +103,9 @@ This document lists all tables and fields migrated in the Spine module.
 - `remote_field`
 - `local_field`
 
-## [tabMatch Field]
+## 7. [tabMatch Field]
 - `name`
-- `creation`
+- `creation"
 - `modified`
 - `modified_by`
 - `owner`
@@ -117,9 +117,9 @@ This document lists all tables and fields migrated in the Spine module.
 - `local_field`
 - `is_reqd`
 
-## [tabSpine Consumer Handler Mapping]
+## 8. [tabSpine Consumer Handler Mapping]
 - `name`
-- `creation`
+- `creation"
 - `modified`
 - `modified_by`
 - `owner`
@@ -137,9 +137,9 @@ This document lists all tables and fields migrated in the Spine module.
 - `is_local`
 - `session_user`
 
-## [tabSpine Producer Handler Mapping]
+## 9. [tabSpine Producer Handler Mapping]
 - `name`
-- `creation`
+- `creation"
 - `modified`
 - `modified_by`
 - `owner`
@@ -158,9 +158,9 @@ This document lists all tables and fields migrated in the Spine module.
 - `akka_key`
 - `session_user`
 
-## [tabMessage Log]
+## 10. [tabMessage Log]
 - `name`
-- `creation`
+- `creation"
 - `modified`
 - `modified_by`
 - `owner`
@@ -185,9 +185,9 @@ This document lists all tables and fields migrated in the Spine module.
 - `retries_left`
 - `error`
 
-## [tabParked Link Reference]
+## 11. [tabParked Link Reference]
 - `name`
-- `creation`
+- `creation"
 - `modified`
 - `modified_by`
 - `owner`
@@ -199,7 +199,12 @@ This document lists all tables and fields migrated in the Spine module.
 - `ref_doctype`
 - `ref_docname`
 
-## [tabSingles]
+## 12. [Spine Consumer Config] (via `tabSingles`)
+- `doctype`
+- `field`
+- `value`
+
+## 13. [Spine Producer Config] (via `tabSingles`)
 - `doctype`
 - `field`
 - `value`

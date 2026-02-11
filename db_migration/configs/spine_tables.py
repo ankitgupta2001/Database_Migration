@@ -78,9 +78,18 @@ SPINE_TABLES = [
     },
     {
         "table_name": "tabSingles",
+        "target_table_name": "tabSingles",
         "select_fields": ["doctype", "field", "value"],
         "insert_fields": ["doctype", "field", "value"],
-        "where": "doctype IN ('Spine Consumer Config', 'Spine Producer Config')",
+        "where": "doctype = 'Spine Consumer Config'",
+        "order_by": None
+    },
+    {
+        "table_name": "tabSingles",
+        "target_table_name": "tabSingles",
+        "select_fields": ["doctype", "field", "value"],
+        "insert_fields": ["doctype", "field", "value"],
+        "where": "doctype = 'Spine Producer Config'",
         "order_by": None
     }
 ]
