@@ -15,20 +15,23 @@ A robust, resumable Python-based mini-ETL designed to handle large-scale MariaDB
 
 1. **Clone the Repository**:
    If the repository is private, use your username and Personal Access Token (PAT) or Password in the URL:
+
    ```bash
    git clone https://username:password-or-token@github.com/your-org/Database_Migration.git
    cd Database_Migration
    ```
-
 2. **Setup Virtual Environment** (Optional but recommended):
+
    ```bash
    python3 -m venv venv
    source venv/bin/activate
    ```
-
 3. **Install Dependencies**:
+
    ```bash
    pip install mysql-connector-python python-dotenv
+
+   sudo apt update && sudo apt-install get vim -y
    ```
 
 ## Configuration

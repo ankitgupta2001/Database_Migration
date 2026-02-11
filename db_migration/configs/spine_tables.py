@@ -64,8 +64,8 @@ SPINE_TABLES = [
     },
     {
         "table_name": "tabMessage Log",
-        "select_fields": ["name", "creation", "modified", "modified_by", "owner", "docstatus", "idx", "title", "json_message", "throttle_duplicates", "topic", "direction", "received_at", "event", "sha256", "status", "remote_doctype", "remote_name", "remote_docname", "local_doctype", "local_docname", "origin_sitename", "last_error", "retries_left", "error"],
-        "insert_fields": ["name", "creation", "modified", "modified_by", "owner", "docstatus", "idx", "title", "json_message", "throttle_duplicates", "topic", "direction", "received_at", "event", "sha256", "status", "remote_doctype", "remote_name", "remote_docname", "local_doctype", "local_docname", "origin_sitename", "last_error", "retries_left", "error"],
+        "select_fields": ["name", "creation", "modified", "modified_by", "owner", "docstatus", "idx", "title", "json_message", "throttle_duplicates", "topic", "direction", "received_at", "event", "sha256", "status", "remote_doctype", "remote_docname", "local_doctype", "local_docname", "last_error", "retries_left", "error"],
+        "insert_fields": ["name", "creation", "modified", "modified_by", "owner", "docstatus", "idx", "title", "json_message", "throttle_duplicates", "topic", "direction", "received_at", "event", "sha256", "status", "remote_doctype", "remote_docname", "local_doctype", "local_docname", "last_error", "retries_left", "error"],
         "where": "1=1",
         "order_by": "name"
     },

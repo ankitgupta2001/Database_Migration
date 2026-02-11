@@ -160,7 +160,7 @@ This document lists all 13 DocTypes migrated in the Spine module.
 
 ## 10. [tabMessage Log]
 - `name`
-- `creation"
+- `creation`
 - `modified`
 - `modified_by`
 - `owner`
@@ -176,11 +176,9 @@ This document lists all 13 DocTypes migrated in the Spine module.
 - `sha256`
 - `status`
 - `remote_doctype`
-- `remote_name`
 - `remote_docname`
 - `local_doctype`
 - `local_docname`
-- `origin_sitename`
 - `last_error`
 - `retries_left`
 - `error`
